@@ -112,14 +112,11 @@ const BurgerApp = () => {
   };
 
   const populateLocalStorage = (data) => {
-    // const {lettuce, bacon, cheese, meat, price} = data;
     console.log("Local Storage Data here:", { ...data });
     localStorage.setItem("loggedout-user-ingredients", JSON.stringify(data));
   };
 
   const handleOrder = () => {
-    // console.log("Handling Order...");
-
     if (isUserLoggedIn) {
       setIsModalVisible(true);
       handleOrderState({
@@ -129,7 +126,6 @@ const BurgerApp = () => {
         meat: ingredients.meat,
         price: totalPrice,
       });
-      // setIsNavigate(false);
       localStorage.removeItem('loggedout-user-ingredients');
     } else {
       console.log("You don't have Account? Please Register Or Sign-in!");
@@ -149,14 +145,11 @@ const BurgerApp = () => {
         meat: ingredients.meat,
         price: totalPrice,
       });
-
-      // handleOrderState(state);
       setIsModalVisible(false);
     }
   };
 
   const handleContinue = () => {
-    // console.log("Continuing to Order");
     navigate("/checkout");
   };
 
