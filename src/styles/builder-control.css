@@ -1,0 +1,87 @@
+.builder-control-container{
+    width: 100%;
+    background-color: #cf8f2e;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: column;
+    flex-flow: column;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-shadow: 0 2px 1px #ccc;
+    box-shadow: 0 2px 1px #ccc;
+    margin: auto;
+    padding: 30px 0;
+    margin-top: 100px;
+}
+
+.builder-control-item{
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 5px 0;
+    text-align: start;
+}
+
+.builder-item-label{
+    padding: 10px;
+    font-weight: 700;
+    width: 80px;
+}
+
+.builder-control-btn{
+    display: block;
+    font: inherit;
+    padding: 5px;
+    margin: 0 5px;
+    width: 80px;
+    border: 1px solid #aa6817;
+    cursor: pointer;
+    outline: none;
+}
+
+.builder-control-less-btn {
+    background-color: #d39952;
+    color: #fff;
+}
+
+.builder-control-more-btn{
+        background-color: #8f5e1e;
+        color: #fff;
+}
+
+.builder-control-less-btn:hover{
+    background-color: #daa972;
+    color: #fff;
+}
+
+.builder-control-more-btn:hover{
+    background-color: #99703f;
+    color: #fff;
+}
+
+.burger-order-btn{
+    background-color: #dad735;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #966909;
+    color: #966909;
+    font-family: inherit;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    -webkit-box-shadow: 2px 2px 2px #966909;
+    box-shadow: 2px 2px 2px #966909;
+}
+
+.burger-order-btn:hover{
+    background-color: #a0db41;
+    border: 1px solid #966909;
+    color: #966909;
+}
+
+/* .BuildControls__OrderButton__1ScSk:not(:disabled) {
+    -webkit-animation: BuildControls__enable__3XAWA .3s linear;
+    animation: BuildControls__enable__3XAWA .3s linear;
+} */

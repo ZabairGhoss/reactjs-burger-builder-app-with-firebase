@@ -1,0 +1,78 @@
+.registeration-sec-container {
+  width: 100%;
+}
+
+.register-form-container {
+  /* width: 100%; */
+  max-width: 550px;
+  /* margin: 80px auto; */
+  /* background-color: red; */
+
+  margin: 20px auto;
+  /* width: 80%; */
+  text-align: center;
+  -webkit-box-shadow: 0 2px 3px #ccc;
+  box-shadow: 0 2px 3px #ccc;
+  border: 1px solid #eee;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.input-group-container {
+  width: 100%;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.input-label {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.input-element {
+  outline: none;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font: inherit;
+  padding: 6px 10px;
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  background-color: transparent;
+  border: none;
+  /* color: #fff; */
+  color: #5c9210;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px;
+  margin: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.register-sign-in-btn {
+    background-color: transparent;
+    border: none;
+    /* color: #fff; */
+    color: #944317;
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 10px;
+    margin: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.margin-top-hidded-div{
+  width: 100%;
+  margin-top: 100px;
+}
