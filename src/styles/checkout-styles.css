@@ -1,0 +1,123 @@
+
+.check-out-container{
+    width: 100%;
+    margin-top: 100px;
+}
+
+.check-out-summary-sec{
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+.check-out-summary-burger-conatiner{
+    width: 100%;
+    margin: auto;
+}
+
+.check-out-action-btn{
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 10px;
+    margin: 10px;
+    font-weight: 700;
+}
+
+.check-out-action-cancel-btn{
+    color: #944317;
+}
+.check-out-action-continue-btn{
+    color: #5c9210;
+}
+
+.user-data-form-container{
+    margin: 20px auto;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0 2px 3px #ccc;
+    border: 1px solid #eee;
+    padding: 10px;
+    box-sizing: border-box;
+    display: none;
+}
+
+.order-form-visible{
+    margin: 20px auto;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0 2px 3px #ccc;
+    border: 1px solid #eee;
+    padding: 10px;
+    box-sizing: border-box;
+    /* display: none; */
+}
+
+
+.user-data-form-container h4{
+    margin: 30px 0;
+}
+
+.input-group{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.input-group-label{
+    font-weight: 700;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.input-group-input{
+    outline: none;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font: inherit;
+    padding: 6px 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-group-select{
+    outline: none;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font: inherit;
+    padding: 6px 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.order-btn{
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 10px;
+    margin: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.order-btn:first-of-type{
+    color: #5c9210;
+}
+
+.order-btn:disabled{
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.error-container{
+    width: 100%;
+    color: red;
+}
