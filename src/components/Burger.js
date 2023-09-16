@@ -13,22 +13,38 @@ const Burger = (props) => {
     let burger = [];
 
     for (let i = 0; i < ingredients.lettuce; i++) {
-      burger.push(<div key={i} className="burger-ingredient-lettuce"></div>);
+      burger.push(
+        <div
+          key={Date.now() + i + 1}
+          className="burger-ingredient-lettuce"
+        ></div>
+      );
     }
 
     for (let i = 0; i < ingredients.bacon; i++) {
       burger.push(
-        <div key={i + 100} className="burger-ingredient-bacon"></div>
+        <div
+          key={Date.now() + i + 100}
+          className="burger-ingredient-bacon"
+        ></div>
       );
     }
 
     for (let i = 0; i < ingredients.cheese; i++) {
       burger.push(
-        <div key={i + 200} className="burger-ingredient-cheese"></div>
+        <div
+          key={Date.now() + i + 1000}
+          className="burger-ingredient-cheese"
+        ></div>
       );
     }
     for (let i = 0; i < ingredients.meat; i++) {
-      burger.push(<div key={i + 300} className="burger-ingredient-meat"></div>);
+      burger.push(
+        <div
+          key={Date.now() + i + 10000}
+          className="burger-ingredient-meat"
+        ></div>
+      );
     }
 
     if (
@@ -38,7 +54,7 @@ const Burger = (props) => {
       ingredients.meat === 0
     ) {
       burger.push(
-        <p>
+        <p key={"111111111"}>
           <strong>No Ingredients Added</strong>
         </p>
       );

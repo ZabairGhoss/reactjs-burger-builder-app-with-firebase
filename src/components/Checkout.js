@@ -50,7 +50,6 @@ const Checkout = () => {
             ...error,
             nameError: "Please enter a valid Name",
           });
-          // setName("");
           setUserDetails({ ...userDetails, name: "" });
           setIsUserDataSet(true);
         } else {
@@ -58,7 +57,6 @@ const Checkout = () => {
             ...error,
             nameError: "",
           });
-          // setName(e.target.value);
           setUserDetails({ ...userDetails, name: e.target.value });
           setIsUserDataSet(false);
         }
@@ -69,7 +67,6 @@ const Checkout = () => {
             ...error,
             streetError: "Please enter a valid Street",
           });
-          // setStreet("");
           setUserDetails({ ...userDetails, street: "" });
           setIsUserDataSet(true);
         } else {
@@ -77,7 +74,6 @@ const Checkout = () => {
             ...error,
             streetError: "",
           });
-          // setStreet(e.target.value);
           setUserDetails({ ...userDetails, street: e.target.value });
           setIsUserDataSet(false);
         }
@@ -89,7 +85,6 @@ const Checkout = () => {
             ...error,
             zipcodeError: "Please enter a valid Zipcode",
           });
-          // setZipcode("");
           setUserDetails({ ...userDetails, zipcode: "" });
           setIsUserDataSet(true);
         } else {
@@ -97,7 +92,6 @@ const Checkout = () => {
             ...error,
             zipcodeError: "",
           });
-          // setZipcode(e.target.value);
           setUserDetails({ ...userDetails, zipcode: e.target.value });
           setIsUserDataSet(false);
         }
@@ -108,7 +102,6 @@ const Checkout = () => {
             ...error,
             countryError: "Please enter a valid Country",
           });
-          // setCountry("");
           setUserDetails({ ...userDetails, country: "" });
           setIsUserDataSet(true);
         } else {
@@ -116,7 +109,6 @@ const Checkout = () => {
             ...error,
             countryError: "",
           });
-          // setCountry(e.target.value);
           setUserDetails({ ...userDetails, country: e.target.value });
           setIsUserDataSet(false);
         }
@@ -127,7 +119,6 @@ const Checkout = () => {
             ...error,
             emailError: "Please enter a valid Email",
           });
-          // setEmail("");
           setUserDetails({ ...userDetails, email: "" });
           setIsUserDataSet(true);
         } else {
@@ -135,13 +126,11 @@ const Checkout = () => {
             ...error,
             emailError: "",
           });
-          // setEmail(e.target.value);
           setUserDetails({ ...userDetails, email: e.target.value });
           setIsUserDataSet(false);
         }
         break;
       case "mode":
-        // setMode(e.target.value);
         setUserDetails({ ...userDetails, mode: e.target.value });
         setIsUserDataSet(false);
         break;
@@ -183,13 +172,6 @@ const Checkout = () => {
 
     if (userOrder?.price) {
       console.log("Setting loggedOut user Order!", { ...userOrder });
-      // setIngredients({
-      //   lettuce: userOrder?.lettuce,
-      //   bacon: userOrder?.bacon,
-      //   cheese: userOrder?.cheese,
-      //   meat: userOrder?.meat,
-      //   price: userOrder?.price,
-      // });
       setIngredients({ ...userOrder });
       localStorage.removeItem("loggedout-user-ingredients");
     } else {
@@ -256,7 +238,6 @@ const Checkout = () => {
                 name="name"
                 placeholder="Your Name"
                 value={userDetails.name}
-                // value={name}
                 onChange={(e) => handleChange(e)}
                 className="input-group-input"
               />
@@ -270,7 +251,6 @@ const Checkout = () => {
                 type="text"
                 name="street"
                 placeholder="Street"
-                // value={street}
                 value={userDetails.street}
                 onChange={(e) => handleChange(e)}
                 className="input-group-input"
@@ -285,7 +265,6 @@ const Checkout = () => {
                 type="text"
                 name="zipcode"
                 placeholder="Zip Code"
-                // value={zipcode}
                 value={userDetails.zipcode}
                 onChange={(e) => handleChange(e)}
                 className="input-group-input"
@@ -300,7 +279,6 @@ const Checkout = () => {
                 type="text"
                 name="country"
                 placeholder="Country"
-                // value={country}
                 value={userDetails.country}
                 onChange={(e) => handleChange(e)}
                 className="input-group-input"
@@ -316,7 +294,6 @@ const Checkout = () => {
                 name="email"
                 placeholder="email"
                 required
-                // value={email}
                 value={userDetails.email}
                 onChange={(e) => handleChange(e)}
                 className="input-group-input"
@@ -328,24 +305,16 @@ const Checkout = () => {
             <div className="input-group">
               <label className="input-group-label"></label>
               <select
-                // defaultValue="fastest"
                 name="mode"
-                // value={mode}
                 value={userDetails.mode}
                 className="input-group-select"
                 onChange={(e) => handleChange(e)}
               >
-                <option value="fastest" selected>
-                  Fastest
-                </option>
+                <option value="fastest">Fastest</option>
                 <option value="Cheapest">Cheapest</option>
               </select>
             </div>
-            <button
-              disabled={isUserDataSet}
-              className="order-btn"
-              // onClick={() => createOrder()}
-            >
+            <button disabled={isUserDataSet} className="order-btn">
               order
             </button>
           </form>

@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# reactjs-burger-builder-app-with-firebase
+Burger-Builder-App: Real-time Burger Building and Ordering management with Firebase
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Burger-Builder-App: Real-time Burger Building and Ordering
+Welcome to the Burger-Builder-App Here, I have present an in-depth overview of my dynamic React JS project that enables users to craft and place orders for customized burgers in real-time. By harnessing the capabilities of Firebase, I've incorporated a range of powerful functionalities, ensuring a personalized and efficient experience. This project boasts the following key features:
 
-## Available Scripts
+****Authentication: Enjoy a tailor-made journey with secure user authentication, providing access to a personalized burger-building experience.
 
-In the project directory, you can run:
+****Firestore Integration: Our app seamlessly integrates Firestore, a robust database solution from Firebase, to handle data storage and retrieval efficiently.
 
-### `npm start`
+****Smooth Hosting: Experience a seamlessly hosted platform that guarantees a smooth and responsive user experience.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Join me on this exciting venture as I delve into the intricacies of the Burger-Builder-App. Through the synergistic blend of React and Firebase technologies, I've created a platform that redefines burger customization and ordering with a real-time user experience.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Scenario:
+- the user have the exposure of adding, removing as much as they want from the ingredients.
+- the user have a secured account under the usage they will manage their burger orders and other information securely.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**** The user have majorly two usecases:
+    - User that created / already have an active account, they can login to their account and watch their order history or make a new order(s).
+    - User that have no account, but they have created burger (with desired ingredients), they need to firtly signup/create an account and then they are able to order securely.
+    - User see the order summary before putting the Order Delivery information such as Address and Mode of Delivery.
