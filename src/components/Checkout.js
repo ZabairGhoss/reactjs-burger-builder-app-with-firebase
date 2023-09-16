@@ -310,16 +310,11 @@ const Checkout = () => {
                 className="input-group-select"
                 onChange={(e) => handleChange(e)}
               >
-                <option value="fastest" selected>
-                  Fastest
-                </option>
+                <option value="fastest">Fastest</option>
                 <option value="Cheapest">Cheapest</option>
               </select>
             </div>
-            <button
-              disabled={isUserDataSet}
-              className="order-btn"
-            >
+            <button disabled={isUserDataSet} className="order-btn">
               order
             </button>
           </form>

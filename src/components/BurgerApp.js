@@ -15,13 +15,6 @@ const BurgerApp = () => {
   const [isCheeseDisabled, setIsCheeseDisabled] = useState(false);
   const [isMeatDisabled, setIsMeatDisabled] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [localOrder, setLocalOrder] = useState({
-    lettuce: 0,
-    bacon: 0,
-    cheese: 0,
-    meat: 0,
-    price: 0,
-  });
 
   const navigate = useNavigate();
 
@@ -126,17 +119,9 @@ const BurgerApp = () => {
         meat: ingredients.meat,
         price: totalPrice,
       });
-      localStorage.removeItem('loggedout-user-ingredients');
+      localStorage.removeItem("loggedout-user-ingredients");
     } else {
       console.log("You don't have Account? Please Register Or Sign-in!");
-
-      setLocalOrder({
-        lettuce: ingredients.lettuce,
-        bacon: ingredients.bacon,
-        cheese: ingredients.cheese,
-        meat: ingredients.meat,
-        price: totalPrice,
-      });
       navigate("/auth");
       populateLocalStorage({
         lettuce: ingredients.lettuce,
@@ -162,11 +147,10 @@ const BurgerApp = () => {
     handlePrice();
     if (currentUser?.uid) {
       setIsUserLoggedIn(true);
-      // console.log("Current User is", currentUser?.uid);
     } else {
       setIsUserLoggedIn(false);
     }
-  }, [currentUser, ingredients]);
+  },[ingredients,currentUser]);
 
   const burgerProps = {
     isUserLoggedIn,

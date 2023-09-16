@@ -6,18 +6,12 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { auth, db } from "../../firebase";
-import {
-  collection,
-  onSnapshot,
-  query,
-  addDoc,
-} from "firebase/firestore";
+import { collection, onSnapshot, query, addDoc } from "firebase/firestore";
 
 export const UserContext = React.createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState({});
-  // const [isLoading, setIsLoading] = useState(true);
   const [orderState, setOrderState] = useState({
     lettuce: 0,
     bacon: 0,
@@ -31,32 +25,24 @@ export const AuthContextProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  const signinUser = (email, password) =>{
-      return signInWithEmailAndPassword(auth, email, password);
-  }
+  const signinUser = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
 
   const logoutUser = () => {
     return signOut(auth);
   };
 
   const handleOrderState = (orderData) => {
-    if(currentUser){
-      setOrderState({...orderData});
-    } else{
-      console.log('User is not logged in');
+    if (currentUser) {
+      setOrderState({ ...orderData });
+    } else {
+      console.log("User is not logged in");
     }
-
-  }
+  };
 
   const createOrder = async (ingredients) => {
-    let {bacon, cheese, lettuce, meat, price}=ingredients;
-    // console.log("Creating Order:", ingredients);
-    // console.log('Current User Here:', currentUser.uid);
-
-    //     const querySnapshot = await getDocs(collection(db, "orders"));
-    //       querySnapshot.forEach((doc) => {
-    //       console.log(`${doc.id} => ${doc.data()}`);
-    // });
+    let { bacon, cheese, lettuce, meat, price } = ingredients;
 
     try {
       const docRef = await addDoc(collection(db, "orders"), {
@@ -74,10 +60,10 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   const addUser = async (userDetails) => {
-    let {country, mode, email, name, street, zipcode} = userDetails;
+    let { country, mode, email, name, street, zipcode } = userDetails;
 
-    console.log('User Details:', userDetails);
-    console.log('Current User Id:', currentUser.uid);
+    console.log("User Details:", userDetails);
+    console.log("Current User Id:", currentUser.uid);
 
     try {
       const docRef = await addDoc(collection(db, "users"), {
@@ -93,59 +79,47 @@ export const AuthContextProvider = ({ children }) => {
     } catch (e) {
       console.error("Error adding document: ", e);
     }
-  }
+  };
 
   const fetchOrders = () => {
-    // console.log('Fetching Orders!!!');
-    const getQuery = query(collection(db, 'orders'))
-    const unsubscribe  = onSnapshot(getQuery, (querySnapshot) => {
+    const getQuery = query(collection(db, "orders"));
+    const unsubscribe = onSnapshot(getQuery, (querySnapshot) => {
       let ordersArr = [];
-      querySnapshot.forEach((order) =>{
-          ordersArr.push({...order.data(), id: order.id});
+      querySnapshot.forEach((order) => {
+        ordersArr.push({ ...order.data(), id: order.id });
       });
-      //place an if condition if user is logged in then fetch orders otherwise no need to fetch 
       setOrders(ordersArr);
-      // console.log('OrdersArray:', ordersArr);
-    })
+    });
 
     return () => unsubscribe();
-  }
-
+  };
 
   const value = {
-     currentUser,
-     orderState,
-     orders,
-     createUser,
-     logoutUser,
-     signinUser,
-     createOrder,
-     addUser,
-     handleOrderState,
-     setOrderState,
+    currentUser,
+    orderState,
+    orders,
+    createUser,
+    logoutUser,
+    signinUser,
+    createOrder,
+    addUser,
+    handleOrderState,
+    setOrderState,
   };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      console.log("Received User:",user?.uid);
+      console.log("Received User:", user?.uid);
       setCurrentUser(user);
-      // setIsLoading(false);
       fetchOrders();
     });
 
     return () => {
       unsubscribe();
     };
-  },[currentUser, orderState]);
+  }, [currentUser, orderState]);
 
-
-
-  return (
-    <UserContext.Provider value={ value }>
-      {/* {!isLoading && children} */}
-      {children}
-    </UserContext.Provider>
-  );
+  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
 
 export const UserAuth = () => {
